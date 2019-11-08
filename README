@@ -1,0 +1,21 @@
+Analyzer to check the newly implemented photon rereconstruction by the use case of Higgs-> gamma gamma at 3 TeV
+
+Quick steps to build the mymarlin example:
+------------------------------------------
+
+    . /path/to/ilcsoft/installation/v01-XX/init_ilcsoft.sh
+    mkdir build
+    cd build
+    cmake -C $ILCSOFT/ILCSoft.cmake ..
+    make install # this should create library: lib/libmymarlin.so
+
+
+
+Quick steps to load mymarlin example into Marlin:
+-------------------------------------------------
+
+    export MARLIN_DLL=$PWD/lib/libmymarlin.so
+    Marlin -x > mysteer.xml
+    grep mymarlin mysteer.xml # should display ... Loading shared library ... (lib/libmymarlin.so)
+
+
